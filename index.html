@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	
+	<title>Lightbox JS</title>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="en" />
+
+	<meta name="description" lang="en" content="Lightbox JS is a simple, unobtrusive script used to overlay images on the current page. It's a snap to setup and works on all modern browsers." />
+	<meta name="keywords" content="lightbox, lightbox js, javascript, lokesh, dhakar" />
+	
+	<link rel="shortcut icon" type="image/ico" href="/images/favicon.gif" />	
+	<link rel="stylesheet" href="screen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="lightbox.css" type="text/css" media="screen" />
+
+	<script type="text/javascript" src="lightbox.js"></script>
+
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="header">
+	<h1><a href="http://www.lokeshdhakar.com/projects/lightbox/">Lightbox JS</a> <small>by <a href="http://www.lokeshdhakar.com">Lokesh Dhakar</a></small></h1>
+</div>
+
+<div class="section first">
+	<h2>Overview</h2>
+	<p class="lead">Lightbox JS is a <em>simple, unobtrusive</em> script used to overlay images on the current page. It's a <em>snap to setup</em> and works on <em>all modern browsers</em>.</p>
+	<p><strong>Note: An new version of this script is available: <a href="/projects/lightbox2/">Lightbox JS v2.0</a></strong></p>
+</div><!-- end .section -->
+
+<div class="section clearfix">
+	<h2>Example</h2>
+		<p>To make sense of it all, check out these examples. Click on a thumbnail or text link below:</p>
+	<div class="thumbnail">
+		<a href="images/image-1.jpg" rel="lightbox"><img src="images/thumb-1.jpg" width="150" height="75" alt="left to right: Lokesh, Jess, Brian, and Steph" /></a>
+		<div class="caption">
+			<a href="images/image-1.jpg" rel="lightbox">image #1</a>
+		</div>
+	</div>
+	
+	<div class="thumbnail">
+		<a href="images/image-2.jpg" rel="lightbox" title="Adding captions is easy!"><img src="images/thumb-2.jpg" width="150" height="75" alt="the handstand incident" /></a>
+		<div class="caption">
+			<a href="images/image-2.jpg" rel="lightbox" title="Adding captions is easy">image #2 <small>w/caption</small></a>
+		</div>
+	</div>
+</div><!-- end .section -->
+
+
+<div class="section">
+	<h2>Benefits</h2>
+	<p>Places images <em>above</em> your current page, not within. This frees you from the constraints of the layout, particularly column widths.</p>
+	<p>Keeps users on the same page. Clicking to view an image and then having to click the back button to return to your site is bad for continuity (and no fun!).</p>
+</div><!-- end .section -->
+
+
+<div class="section">
+
+	<h2>How to Use:</h2>
+	<ol>
+		<li>Include <code>lightbox.js</code> in your header.
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;lightbox.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+		</li>
+
+		<li>Add <code>rel="lightbox"</code> attribute to any link tag to activate the lightbox. For example:
+<pre><code>&lt;a href=&quot;images/image-1.jpg&quot; rel=&quot;lightbox&quot; title=&quot;my caption&quot;&gt;image #1&lt;/a&gt;
+</code></pre>
+		<em>Optional: </em>Use the <code>title</code> attribute if you want to show a caption.
+		</li>
+	</ol>
+	<!--<p>That's all you need to get started, but keep reading.</p>-->
+</div>
+<!-- end .section -->
+
+<div class="section">
+	<h2>Customizing:</h2>
+	<ol>
+		<li>You can use CSS to style the image container. Here is the code used in the examples above:
+<pre><code>#lightbox{
+	background-color:#eee;
+	padding: 10px;
+	border-bottom: 2px solid #666;
+	border-right: 2px solid #666;
+	}
+#lightboxDetails{
+	font-size: 0.8em;
+	padding-top: 0.4em;
+	}	
+#lightboxCaption{ float: left; }
+#keyboardMsg{ float: right; }
+
+#lightbox img{ border: none; } 
+#overlay img{ border: none; }</code></pre>
+		</li>
+		<li>To create the 'shadow' effect over the page, you'll need to use a PNG file and some extra CSS. The CSS is a bit messy thanks to IE's unorthodox support of PNG transparency:
+<pre><code>#overlay{ background-image: url(overlay.png); }
+
+* html #overlay{
+	background-color: #000;
+	back\ground-color: transparent;
+	background-image: url(blank.gif);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="overlay.png", sizingMethod="scale");
+	}</code></pre>
+		</li>
+		<li>If you would like to show the user a 'loading' graphic, like the animated progress bar in the examples above, specify its location at the top of the <code>lightbox.js</code> file.
+<pre><code>var loadingImage = 'loading.gif';</code></pre></li>
+		<li>In the same vein, if you would like to use a 'close button', like the 'X' graphic in the examples above, specify its location at the top of the <code>lightbox.js</code> file.
+<pre><code>var closeButton = 'close.gif';	</code></pre></li>
+	</ol>
+</div><!-- end .section -->
+
+<div class="section">
+	<h2>Download:</h2>
+	<ul class="download">
+		<li><a href="lightbox.js"><img src="/images/save_icon.gif" width="10" height="10" alt="save lightbox.js" /> lightbox.js</a> - the important stuff</li>
+		<li><a href="lightbox.css"><img src="/images/save_icon.gif" width="10" height="10" alt="save lightbox.css" /> lightbox.css</a> - basic style and tricky PNG support</li>
+		<li><a href="overlay.png"><img src="/images/save_icon.gif" width="10" height="10" alt="save overlay.png" /> overlay.png</a> - 80% opacity, black tile used to create shadow</li>
+		<li><a href="loading.gif"><img src="/images/save_icon.gif" width="10" height="10" alt="save loading.gif" /> loading.gif</a> - mock status bar used in examples above</li>
+		<li><a href="close.gif"><img src="/images/save_icon.gif" width="10" height="10" alt="save loading.gif" /> close.gif</a> - 'X' graphic placed in top-right corner</li>
+	</ul>
+</div><!-- end .section -->
+
+<div class="section">
+	<h2>Changelog:</h2>
+	<p>
+	<em>1/19/06 10:40PM EST</em> - Added keypress activated closing.<br />
+	<em>1/15/06 12:50PM EST</em> - Added optional 'close' button.<br />
+	<em>1/10/06 10:30PM EST</em> - Added support for captions.<br />
+	<em>12/31/05 6:00PM EST</em> - Fixed IE6 bugs.</p>
+</div><!-- end .section -->
+
+<div class="section">
+	<h2>Modifications:</h2>
+	<ul>
+		<li><a href="http://particletree.com/features/lightbox-gone-wild/">Lightbox Gone Wild</a> - allows non-image content w/AJAX calls - <em>by Chris Campbell</em></li>
+		<li><a href="http://www.eight.nl/files/leightbox//">Leightbox</a> - allows non-image content w/inline Divs - <em>by Simon de Haan</em></li>
+		<li><a href="http://shiftingpixel.com/lightbox/">Greased Lightbox</a> - <em>by <a href="http://shiftingpixel.com">Joe Lencioni</a></em> based on the work of <em><a href="http://www.leftbrained.co.uk/code/flickrbox">Gavin Montague</a></em></li>
+		<li><a href="http://zeo.unic.net.my/2006/01/17/wp-lightbox-js-wordpress-plugin/">Wordpress Plugin</a> - <em>by <a href="http://zeo.unic.net.my/">Safirul Alredha</a></em></li>
+		<li><a href="lightbox-4.6.x.zip">Drupal Module</a> - <em>by Mark Ashmead</em></li>
+		<li><a href="flashlightbox.zip">Flashlightbox</a> - allows you to call the script from within a Flash file - <em>by <a href="http://www.kellishaver.com">Kelli Shaver</a></em></li>
+		<li><a href="flashlightbox2.zip">Flashlightbox v2</a> - updated with bug fixes and caption support - <em>by <a href="http://www.punkbyte.com">Jeff Garczewski</a></em></li>
+	</ul>
+</div><!-- end .section -->
+
+<div class="section">
+	<h2>Troubleshooting:</h2>
+	<dl>
+		<dt>It doesn't work at all. The image opens up in a new window.</dt>
+		<dd>This is commonly caused by a conflict between JS scripts. Check your body tag and look for an onload attribute. Example:<br />
+			<code>&lt;body onload=&quot;MM_preloadImages(&lsquo;/images/menu_on.gif&rsquo;)&hellip;;&quot;&gt;</code><br />
+			A quick fix to this problem is to append the <code>initLightbox()</code> to the onload attribute as so:<br />
+			<code>&lt;body onload=&quot;MM_preloadImages(&lsquo;/images/menu_on.gif&rsquo;)&hellip;;initLightbox()&quot;&gt;</code><br />
+		<dt>It doesn't work if I click an image before the page has finished loading.</dt>
+		<dd>This is not a bug, but a side-effect of unobtrusive scripts of this kind.</dd>
+		<dt>Flash objects appear through overlay.</dt>
+		<dd>Refer to <a href="http://www.lokeshdhakar.com/2006/01/10/lightbox-js-update/#comment-924">comment</a> by netasceta.</dd>
+		<dt>Script doesn't work with imagemaps.</dt>
+		<dd>Refer to <a href="http://www.lokeshdhakar.com/2006/01/10/lightbox-js-update/#comment-756">comment</a> by Jason Buechler.</dd>
+		<dt>Can I call the script from within a frame/iframe and still have it display on top of the entire page?</dt>
+		<dd>Refer to <a href="http://www.lokeshdhakar.com/2006/01/10/lightbox-js-update/#comment-1638">comment</a> by Sean K. Some people have noted trouble implementing this modification. Proceed with caution, and if you can clear up the instructions it would be appreciated.</dd>
+		<dt>The shadow overlay doesn't stretch to cover full browser window.</dt>
+		<dd>Remove the default margin and padding from the body tag. Add <code>body{ margin: 0; padding: 0; }</code> to your stylesheet.</dd>
+		<dt>The shadow overlay doesn't show up in IE.</dt>
+		<dd>Find the <code>filter: progid:DXI&hellip;</code> line that you added to your stylesheet. There is a reference to the overlay.png in this line. Make sure that it is set relative to the current webpage, not relative to the CSS file.</dd>
+	</dl>
+</div><!-- end .section -->
+
+<div class="section">
+	<h2>Contact:</h2>
+	<p>If you are having problems with the script, please check the <a href="http://huddletogether.com/forum/">forum</a> for help.. Thanks.</p>
+	<p><a href="#wrapper">back to top</a></p>
+</div><!-- end .section -->
+
+
+</div><!-- end #wrapper -->
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2196019-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</body>
+</html>
