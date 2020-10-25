@@ -1,10 +1,12 @@
 # Lightbox
 
-This is the original Lightbox script that introduced the concept of overlaying content on top of an existing page.
+This is the original Lightbox script that introduced the concept of overlaying content on top of an existing page. The code is over 10 years old and I wouldn't recommend anyone use it, but I've kept it here for posterity.
 
-The script focused on images and nailed a couple of things out of the gate that helped it gain traction:
-1. It was super simple to implement
-2. It degraded gracefully if Javascript was disabled or unavailable, a real possibility at the time
+## Overview
+
+The script narrowly focused on displaying images and nailed a couple of things out of the gate that helped it gain traction:
+1. 🛠 It was super simple to implement. The focus on developer ergonomics was less common at the time. 
+2. 💪 It degraded gracefully if Javascript was disabled or unavailable, a real possibility at the time
  
 Over time, it went on to spawn 100s of imitators and become a standard pattern on the web, with the term _lightbox_ added to the lexicon. [Wikipedia/Lightbox_(Javascript)](https://en.wikipedia.org/wiki/Lightbox_(JavaScript))
 
